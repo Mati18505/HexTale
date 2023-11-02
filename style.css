@@ -1,0 +1,178 @@
+body {
+    margin: 0;
+    padding: 0;
+    background-image: url('tlo.webp');
+    background-size: cover;
+    background-repeat: no-repeat;
+    color: white;
+    font-family: 'Proxima Nova', Arial, sans-serif;
+    height: 100vh;
+    box-sizing: border-box;
+}
+
+.main-container {
+    height: 100vh;
+    display: grid;
+    grid-template-areas: 
+        "topbar topbar topbar"
+        "supporters mainArea specialppl"
+        "footer footer footer";
+    grid-template-columns: 1fr 3fr 1fr;
+    grid-template-rows: max-content auto min-content;
+    gap: 50px 5px;
+}
+
+.logo {
+    width: 80px;
+}
+
+/* navigation menu */
+#topnav {
+    grid-area: topbar;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 5%;
+
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.6));
+    position: relative;
+    height: 75px;
+}
+
+#topnav li, a, button{
+    text-decoration: none;
+    color: inherit;
+}
+
+#topnav::after {
+    content: "";
+    display: block;
+    background-color: purple;
+    height: 10px;
+    position: absolute;
+    width: 100%;
+    left: 0;
+    bottom: 0;
+}
+
+#topnav .logo {
+    margin-left: auto; 
+    margin-right: 30px;
+}
+
+.menu {
+    list-style-type: none;
+    padding: 0;
+    margin: 0; 
+}
+
+.menu > li {
+    display: inline-block;
+}
+
+.menuButton {
+    font-weight: bolder;
+    border-radius: 20px;
+    padding: 10px 40px;
+    font-size: 22px;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.menuButton:hover {
+    background-color: #800080;
+}
+
+.downloadButton {
+    background-color: #800080;
+}
+
+.downloadButton:hover {
+    background-color: #b700b7;
+    box-shadow: 1px 1px #840084;
+}
+
+
+
+/* main area */
+.headline {
+    font-size: 24px;
+    font-family: 'Vermin Verile', sans-serif;
+    margin-top: 10px;
+    font-weight: normal;
+    text-align: center;
+}
+
+#news-content {
+    font-size: 24px;
+    font-family: 'Proxima Nova', sans-serif;
+    text-align: center;
+    margin-top: 20px;
+}
+
+#specialppl {
+    list-style-type: none;
+    padding: 0;
+
+    font-size: 20px; 
+    font-family: 'Proxima Nova Black', sans-serif; 
+    text-align: center; 
+    margin-top: 0px;
+}
+
+#specialppl > #mati {
+    color: #2868c7;
+}
+
+.rectangle {
+    background-color: rgba(0, 0, 0, 0.5);
+    border-radius: 20px;
+    padding: 10px;
+}
+
+#specialpplContainer {
+    height: 240px;
+    grid-area: specialppl;
+}
+
+#supporters {
+    height: 100px;
+
+    font-size: 20px;
+    font-family: 'Proxima Nova', sans-serif; 
+    text-align: center;
+
+    grid-area: supporters;
+}
+
+footer {
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 5px;
+    text-align: center;
+    grid-area: footer;
+}
+
+#rules-content {
+    font-size: 18px; 
+    font-family: 'Proxima Nova', sans-serif; 
+    text-align: center; 
+    margin-top: 20px;
+}
+
+::-webkit-scrollbar {
+    width: 1vw;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: #777;
+}
+
+::-webkit-scrollbar-track {
+    background-color: #555;
+}
+
+.mainArea {
+    grid-area: mainArea;
+    overflow: visible;
+    overflow-x: hidden;
+}
