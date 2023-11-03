@@ -14,6 +14,7 @@
                 <i class="fas fa-envelope"></i>
             </label>
             <input type="text" name="email" placeholder="Email" id="email" required>
+            <div class="g-recaptcha" data-sitekey="6LfdOOEoAAAAAAK9NydZv45TpBskeSjK3BhIDDdB"></div>
             <span id="warning"></span>
             <input type="submit" value="Register">
         </form>
@@ -26,7 +27,13 @@
     const warning = document.getElementById("warning");
 
     registerForm.addEventListener("submit", function(event) {
-    
+        if(!grecaptcha.getResponse())
+        {
+            warning.innerHTML = "Please confirm that you are not a bot.";
+            event.preventDefault();
+            return;
+        }
+        
         var request = new XMLHttpRequest();
         var url = "RegisterDir/validate.php";
         request.open("POST", url, false);

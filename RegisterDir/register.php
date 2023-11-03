@@ -7,6 +7,9 @@ require 'PHPMailer/src/SMTP.php';
 
 require_once("connection.php");
 
+if(!CheckHumanity())
+	exit("You are a bot!");
+
 $con =$webpage->GetConnection();
 //Validating
 ob_start();
@@ -67,5 +70,29 @@ function SendVerificationCode($uniqid, $email) {
 }
 function RegistrationSuccessful($email) {
 	header("location: ../index.php?page=successful-registration");
+}
+function CheckHumanity() : bool{
+	if(isset($_POST["g-recaptcha-response"])) {
+		$token = $_POST["g-recaptcha-response"];
+		$url = "https://www.google.com/recaptcha/api/siteverify";
+		$data = array(
+			'secret' => '6LfdOOEoAAAAAIXnKkB-35b5YHzFprRQF8nM_fvD',
+			'response' => $token
+		);
+	
+		$options = array(
+			'http' => array(
+				'header'=> "Content-Type: application/x-www-form-urlencoded\r\n",
+				'method' => 'POST',
+				'content' => http_build_query($data)
+			)
+		);
+		$context = stream_context_create($options);
+		$result = file_get_contents($url, false, $context);
+		$response = json_decode($result);
+		return $response->success;
+	}
+	else
+		return false;
 }
 ?>
