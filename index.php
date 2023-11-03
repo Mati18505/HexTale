@@ -3,7 +3,7 @@
 <?php
     function putPage($page) {
         if(strlen($page) > 0) {
-            $allowed = array('main-page', 'ranking', 'rules');
+            $allowed = array('main-page', 'ranking', 'rules', 'register', 'successful-registration', 'email-confirmed');
 
             $page = trim($page);
             $page = (in_array($page, $allowed)) ? $page : 'main-page';
@@ -19,6 +19,7 @@
     <link rel="stylesheet" type="text/css" href="Fontello/css/fontello.css">
     <script src="htmlImporter.js"></script>
     <link rel="shortcut icon" href="#">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer">
 </head>
 
 <body>
