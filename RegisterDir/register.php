@@ -69,7 +69,7 @@ function SendVerificationCode($uniqid, $email) {
 	$mail->send();
 }
 function RegistrationSuccessful($email) {
-	header("location: ../index.php?page=successful-registration");
+	header("location: ../successful-registration.php");
 }
 function CheckHumanity() : bool{
 	if(isset($_POST["g-recaptcha-response"])) {

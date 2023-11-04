@@ -17,7 +17,7 @@ if (isset($_GET['email'], $_GET['code'])) {
 		{
 			$playerInfo = GetGameInfo($email, $con);
 			if(AddPlayer($playerInfo))
-				header("location: ../index.php?page=email-confirmed");
+				header("location: ../email-confirmed.php");
 			else
 				echo 'There was an error adding your account to game database! Please contact us.';
 		}
