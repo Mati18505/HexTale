@@ -1,4 +1,15 @@
-<div class="rectangle mainArea">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Rules</title>
+    <?php echo @file_get_contents('./html/head.html');?>
+</head>
+
+<body>
+    <div class="main-container">
+        <?php echo @file_get_contents('./html/header.html'); ?>
+            
+        <div class="rectangle mainArea">
             <h1 class="headline">RULES</h1>
             <div id="rules-content">
                 <h2>Game &amp; discord rules</h2>
@@ -32,3 +43,10 @@
                 <h2>&amp;14.</h2> Item Refund: Items may be considered for replacement in specific situations, like bugs or unfulfilled quests.
             </div>
         </div>
+
+        <?php echo @file_get_contents('./html/footer.html'); ?>
+        
+    </div>
+</body>
+
+</html>
