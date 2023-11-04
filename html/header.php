@@ -17,6 +17,9 @@
             </li>
         </ul>
     </nav>
-
-    <a class="menuButton downloadButton" href="https://drive.google.com/file/d/1WScxla6wgBT_cBj5lk9THu3jJWrxlBei/view?usp=sharing" target="_blank"><i class="icon-download"></i> DOWNLOAD</a>
+    <?php
+        $downloadLinks = json_decode(file_get_contents("files/DownloadLinks.json"), true);
+        $clientDownload = $downloadLinks["clientDownload"];
+        echo '<a class="menuButton downloadButton" href="' . $clientDownload . '" target="_blank"><i class="icon-download"></i> DOWNLOAD</a>';
+    ?>
 </header>
