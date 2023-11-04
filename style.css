@@ -263,3 +263,7 @@ footer {
     background-color: #b700b7;
     box-shadow: 1px 1px #840084;
 }
+
+.floatRight {
+    float: right;
+}
