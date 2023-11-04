@@ -7,7 +7,7 @@
 
 <body>
     <div class="main-container">
-        <?php include('./html/header.html'); ?>
+        <?php include('./html/header.php'); ?>
             
         <div class="rectangle mainArea">
             <h1 class="headline">Email Verification</h1>
