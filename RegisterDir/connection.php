@@ -17,9 +17,12 @@
             return $this->con;
         }
     }
-
-    //$webpage = new Database('172.28.223.161', 'postgres', 'Mateusz1234', 'webpage');
-    //$game = new Database('172.28.223.161', 'postgres', 'Mateusz1234', 'game');
-    $webpage = new Database('144.24.178.177', 'postgres', 'NosTaleTeczkaPriv', 'webpage');
-    $game = new Database('144.24.178.177', 'postgres', 'NosTaleTeczkaPriv', 'game');
+    define('PRIVATE_INCLUDE_DIR', $_SERVER['DOCUMENT_ROOT'] . '/../PrivateInclude');
+    $connectionCredentials = json_decode(file_get_contents(PRIVATE_INCLUDE_DIR . '/database.json'), true);
+    $host = $connectionCredentials["host"];
+    $user = $connectionCredentials["user"];
+    $pass = $connectionCredentials["pass"];
+    
+    $webpage = new Database($host, $user, $pass, 'webpage');
+    $game = new Database($host, $user, $pass, 'game');
 ?>
