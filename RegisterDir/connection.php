@@ -24,5 +24,5 @@
     $pass = $connectionCredentials["pass"];
     
     $webpage = new Database($host, $user, $pass, 'webpage');
-    $game = new Database($host, $user, $pass, 'game');
+    $game = new Database($host, $user, $pass, 'HexTaleDB');
 ?>

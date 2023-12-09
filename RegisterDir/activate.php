@@ -60,9 +60,9 @@ function GetGameInfo($email, $con) : PlayerInfo {
 function AddPlayer(PlayerInfo $playerInfo) : bool {
 	global $game;
 	$con = $game->getConnection();
-	if ($stmt = pg_prepare($con, 'addPlayer', 'INSERT INTO "accounts"."accounts" ("Name", "Password", "MasterAccountId", "Authority", "Language", "BankMoney", "IsPrimaryAccount") VALUES ($1, $2, $3, 0, 0, 0, false);')) {
-		pg_execute($con, "addPlayer", array($playerInfo->username, $playerInfo->password, "f6a16ff7-4a31-11eb-be7b-8344edc8f36b"));
-		return true;
+	if ($stmt = pg_prepare($con, 'addPlayer', 'INSERT INTO "accounts"."accounts" ("Name", "Password", "MasterAccountId", "Authority", "Language", "BankMoney", "IsPrimaryAccount", "Cash") VALUES ($1, $2, $3, 0, 0, 0, false, 0);')) {
+		if(pg_execute($con, "addPlayer", array($playerInfo->username, $playerInfo->password, "f6a16ff7-4a31-11eb-be7b-8344edc8f36b")) != false)
+		    return true;
 	}
 	return false;	
 }

@@ -106,7 +106,7 @@ body {
 #news-content {
     font-size: 24px;
     font-family: 'Proxima Nova', sans-serif;
-    text-align: center;
+    text-align: left;
     margin-top: 20px;
 }
 
@@ -175,6 +175,7 @@ footer {
     grid-area: mainArea;
     overflow: visible;
     overflow-x: hidden;
+    padding: 10px 40px;
 }
 
 /* Register */
