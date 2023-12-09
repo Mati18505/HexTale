@@ -1,0 +1,7 @@
+RewriteEngine on
+RewriteBase /
+RewriteRule ^main-page$  main-page.php
+RewriteRule ^ranking$ ranking.php
+RewriteRule ^rules$ rules.php
+RewriteRule ^register$ register.php
+DirectoryIndex main-page.php
