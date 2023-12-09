@@ -15,11 +15,7 @@
                 <p>You can now <b>play!</b></p>
             </div>
             <div class="download-div">
-            <?php
-                $downloadLinks = json_decode(file_get_contents("files/DownloadLinks.json"), true);
-                $clientDownload = $downloadLinks["clientDownload"];
-                echo '<a class="downloadButton-alone" href="' . $clientDownload . '" target="_blank"><i class="icon-download"></i> DOWNLOAD</a>';
-            ?>
+            <a class="downloadButton-alone" href="./files/launcher/Hextale Launcher-1.0.0 Setup.exe" target="_blank"><i class="icon-download"></i> DOWNLOAD</a>
             
             </div>
         </div>
